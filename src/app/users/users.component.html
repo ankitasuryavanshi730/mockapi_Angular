@@ -1,0 +1,37 @@
+
+<h2>Add New User</h2>
+
+
+<div class="container">
+
+  <div class="row " style="width: 500px; border: solid 1px ; margin: 5px; padding: 20px;">
+    <div class="col-lg-12">
+
+      <form [formGroup]="formdata" (ngSubmit)="submit(formdata.value)">
+
+        <label for="name">Name:</label>
+        <span class="text-danger" *ngIf="formdata.controls.name.touched && formdata.controls.name.invalid">please enter the name</span>
+        <input type="text" name="name" id="" class="form-control"  formControlName="name">
+
+        <br><br>
+
+        <label for="email">Email:</label>
+        <span class="text-danger" *ngIf="formdata.controls.email.touched && formdata.controls.email.invalid">please enter the email</span>
+        <input type="text" name="email" class="form-control" formControlName="email"  >
+
+        <br>
+
+        <label for="mobno">Mobail No:</label>
+        <input type="text" class="form-control" formControlName="mobno"  >
+
+        <br>
+
+        <div class="col-lg-12 text-center">
+          <input type="submit" class="btn btn-primary" value="Submit" [disabled]="!formdata.valid || posting" >
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</div>
